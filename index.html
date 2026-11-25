@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blacio Center</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #05082e; }
+  </style>
+</head>
+<body>
+  <style>
+  .bc-landing {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #05082e;
+    background-image: url("nube.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .bc-landing * { box-sizing: border-box; }
+  .bc-nav {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .bc-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .bc-logo-img {
+    height: 70px !important;
+    width: auto !important;
+    max-height: none !important;
+    display: block;
+  }
+  .bc-nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .bc-nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s, text-shadow 0.2s;
+  }
+  .bc-nav-links a:hover {
+    color: #00f0ff;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  }
+  .bc-hero {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 64px 24px 80px;
+  }
+  .bc-eyebrow {
+    color: #00e5ff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    text-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+  }
+  .bc-title {
+    font-size: clamp(2.4rem, 5.5vw, 4.1rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 24px;
+    max-width: 860px;
+    color: #ffffff;
+  }
+  .bc-title span {
+    background: linear-gradient(90deg, #00ffd5 0%, #00c8ff 50%, #2b7fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bc-desc {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: #c7d2fe;
+    max-width: 640px;
+    margin: 0 0 40px;
+  }
+  .bc-desc strong { color: #ffffff; }
+  .bc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 72px;
+  }
+  .bc-btn-primary {
+    background: linear-gradient(90deg, #00f5d4 0%, #00b4ff 55%, #0066ff 100%);
+    color: #05082e !important;
+    padding: 16px 30px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.35);
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  }
+  .bc-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 28px rgba(0, 245, 212, 0.55);
+    filter: brightness(1.08);
+  }
+  .bc-btn-outline {
+    background-color: rgba(5, 8, 46, 0.55);
+    color: #00e5ff !important;
+    border: 1.5px solid #00b4ff;
+    padding: 16px 30px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    backdrop-filter: blur(6px);
+    transition: background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .bc-btn-outline:hover {
+    background-color: rgba(0, 180, 255, 0.14);
+    border-color: #00f5d4;
+    box-shadow: 0 0 16px rgba(0, 180, 255, 0.25);
+  }
+  .bc-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    border-top: 1px solid rgba(0, 180, 255, 0.2);
+    padding-top: 48px;
+  }
+  .bc-card {
+    background: rgba(10, 16, 66, 0.6);
+    border: 1px solid rgba(0, 180, 255, 0.18);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(8px);
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .bc-card:hover {
+    border-color: rgba(0, 245, 212, 0.55);
+    box-shadow: 0 8px 24px rgba(0, 102, 255, 0.2);
+    transform: translateY(-3px);
+  }
+  .bc-card h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+  }
+  .bc-card p {
+    color: #a5b4fc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+@media (max-width: 768px) {
+    .bc-landing {
+      background-image:
+        url("https://blaciocenter.com/wp-content/uploads/2026/11/NUBE-NUEVA2-scaled.png"),
+        url("https://blaciocenter.com/wp-content/uploads/2026/11/NUBE-NUEVA2-scaled.png");
+      background-position: top left, bottom right;
+      background-size: 160% auto, 160% auto;
+      background-repeat: no-repeat, no-repeat;
+      background-blend-mode: lighten;
+    }
+  .bc-nav {
+      padding: 20px 16px;
+      align-items: flex-start; /* Mantiene los enlaces pegados arriba */
+    }
+    .bc-hero {
+      padding: 16px 20px 64px; /* Sube todo el contenido acercándolo al logo */
+    }
+    .bc-logo {
+      font-size: 1.15rem;
+      gap: 8px;
+      white-space: nowrap;
+      margin-top: 45px; /* Baja solo el logo y el nombre */
+    }
+    .bc-logo-img {
+      height: 44px !important;
+    }
+    .bc-nav-links {
+      gap: 14px;
+    }
+    .bc-nav-links a {
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    .bc-btn-outline,
+    .bc-btn-primary {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="bc-landing">
+  <nav class="bc-nav">
+    <a href="https://blaciocenter.com" class="bc-logo">
+      <img src="iconoblacio2.png" alt="Blacio Center" class="bc-logo-img">Blacio Center
+    </a>
+
+    <div class="bc-nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="https://soporte.blaciocenter.com">Portal de Soporte</a>
+    </div>
+  </nav>
+
+  <section class="bc-hero">
+    <div class="bc-eyebrow">INFRAESTRUCTURA CLOUD Y SOPORTE IT</div>
+    <h1 class="bc-title">
+      Transformamos e impulsamos tu <span>Crecimiento</span>
+    </h1>
+    <p class="bc-desc">
+      Soluciones en la nube, gestión de sistemas y soporte técnico para que tu negocio crezca con seguridad y sin interrupciones.
+    </p>
+
+    <div class="bc-actions">
+      <a href="#servicios" class="bc-btn-outline">Ver servicios</a>
+      <a href="https://soporte.blaciocenter.com" class="bc-btn-primary">Acceder al Portal de Soporte</a>
+    </div>
+
+    <div id="servicios" class="bc-services">
+      <div class="bc-card">
+        <h3>Infraestructura Cloud y Docker</h3>
+        <p>Despliegue de servicios en AWS con contenedores Docker aislados y seguros.</p>
+      </div>
+      <div class="bc-card">
+        <h3>Sistemas, Redes y Seguridad</h3>
+        <p>Administración Linux, proxies inversos con NGINX, cifrado SSL/TLS y copias de seguridad automatizadas.</p>
+      </div>
+      <div class="bc-card">
+        <h3>Soporte Técnico Gestionado</h3>
+        <p>Atención ágil y trazabilidad completa de incidencias a través de nuestro portal corporativo en Odoo.</p>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
